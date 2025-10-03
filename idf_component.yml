@@ -1,0 +1,7 @@
+version: 1.0.0
+maintainers:
+  - Sebastian Koczur <themechanos@gmail.com>
+description: >-
+  Library with easy creating state machine
+
+repository: "https://github.com/TheMechanos/SKStateMachine.git"
