@@ -11,7 +11,7 @@
 #endif
 
 
-namespace SK{
+namespace SK {
 
 template <typename E> class StateMachine {
 public:
@@ -24,22 +24,11 @@ public:
 
 
     inline bool is(E s) { return act == s; }
+    inline bool isChangeTo(E to) { return act != last && act == to; }
+    inline bool isChangeFromTo(E from, E to) { return act != last && last == from && act == to; }
 
-    inline bool isChangeTo(E to) {
-        if (act != last && act == to) {
-            last = act;
-            return true;
-        }
-        return false;
-    }
+    inline void sync() { last = act; }
 
-    inline bool isChangeFromTo(E from, E to) {
-        if (act != last && last == from && act == to) {
-            last = act;
-            return true;
-        }
-        return false;
-    }
 
     operator E() { return act; }
 
