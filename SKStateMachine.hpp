@@ -20,7 +20,10 @@ public:
         , last(initial) { }
 
     inline E getState() { return act; }
-    inline void setState(E s) { act = s; }
+    inline void setState(E s) {
+        sync();
+        act = s;
+    }
 
 
     inline bool is(E s) { return act == s; }
