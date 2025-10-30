@@ -27,8 +27,11 @@ public:
 
 
     inline bool is(E s) { return act == s; }
+
+    inline bool isChange() { return act != last; }
     inline bool isChangeTo(E to) { return act != last && act == to; }
     inline bool isChangeFromTo(E from, E to) { return act != last && last == from && act == to; }
+    
 
     inline void sync() { last = act; }
 
